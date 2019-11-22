@@ -1,0 +1,15 @@
+{
+  "name": "cloudwatch-to-slack-sender",
+  "version": "1.0.0",
+  "description": "Send your CloudWatch alarms into Slack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viovendi/slack-alarm-sender.git"
+  },
+  "author": "Volodymyr Machula",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viovendi/slack-alarm-sender/issues"
+  },
+  "homepage": "https://github.com/viovendi/slack-alarm-sender#readme"
+}
