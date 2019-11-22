@@ -1,6 +1,8 @@
 const axios = require('axios');
 
-async function sendSlackMessage(message, slackWebhookToken) {
+async function sendSlackMessage(snsMessage, slackWebhookToken) {
+  var message = JSON.parse(snsMessage.Message);
+
   var slackConfig = {
     attachments: [{
       fallback: 'CloudWatch Alarm: ' + message.AlarmName,
