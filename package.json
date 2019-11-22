@@ -2,6 +2,7 @@
   "name": "cloudwatch-to-slack-sender",
   "version": "1.0.0",
   "description": "Send your CloudWatch alarms into Slack",
+  "main": "./src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viovendi/slack-alarm-sender.git"
@@ -11,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/viovendi/slack-alarm-sender/issues"
   },
-  "homepage": "https://github.com/viovendi/slack-alarm-sender#readme"
+  "homepage": "https://github.com/viovendi/slack-alarm-sender#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }
