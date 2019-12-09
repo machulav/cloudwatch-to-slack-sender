@@ -10,9 +10,9 @@ async function sendSlackMessage(snsMessage, slackWebhookToken) {
       pretext: '',
       author_name: 'CloudWatch Alarm',
       author_link: '',
-      author_icon: 'http://www.iconarchive.com/download/i80410/uiconstock/socialmedia/AWS.ico', // TODO change URL
+      author_icon: 'https://raw.githubusercontent.com/viovendi/cloudwatch-to-slack-sender/master/img/aws.ico',
       title: message.AlarmName,
-      title_link: 'https://console.aws.amazon.com/cloudwatch/home#alarm:alarmFilter=ANY', // TODO change URL
+      title_link: 'https://console.aws.amazon.com/cloudwatch/home#alarm:alarmFilter=ANY',
       text: message.AlarmDescription,
       fields: [{
           title: 'Current State',
