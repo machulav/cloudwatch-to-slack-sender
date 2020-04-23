@@ -1,10 +1,6 @@
 const axios = require('axios');
 
 async function sendMessageToSlack(snsEvent, slackWebhookToken) {
-  if(!snsEvent || !snsEvent.Records[0] || !snsEvent.Records[0].Sns || !snsEvent.Records[0].Sns.Message) {
-    return null;
-  }
-
   var message = JSON.parse(snsEvent.Records[0].Sns.Message);
 
   var slackConfig = {
