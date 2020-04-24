@@ -1,6 +1,6 @@
 {
   "name": "cloudwatch-to-slack-sender",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "npm package for sending CloudWatch Alerts from SNS topic to Slack channel",
   "author": "Volodymyr Machula",
   "main": "./src/index.js",
