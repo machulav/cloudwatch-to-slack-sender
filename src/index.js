@@ -5,14 +5,14 @@ async function sendAlarm(snsEvent, slackWebhookToken) {
 
   var slackConfig = {
     attachments: [{
-      fallback: 'CloudWatch Alarm: (' + message.NewStateValue + ') ' + message.AlarmName,
+      fallback: `CloudWatch Alarm: (${message.NewStateValue}) ${message.AlarmName}`,
       color: getColor(message.NewStateValue),
       pretext: '',
-      author_name: 'CloudWatch Alarm',
+      author_name: '',
       author_link: '',
-      author_icon: 'https://raw.githubusercontent.com/machulav/cloudwatch-to-slack-sender/master/img/aws.ico',
+      author_icon: '',
       title: message.AlarmName,
-      title_link: 'https://console.aws.amazon.com/cloudwatch/home#alarm:alarmFilter=ANY',
+      title_link: `https://console.aws.amazon.com/cloudwatch/home?#alarmsV2:alarm/${message.AlarmName}`,
       text: message.AlarmDescription,
       fields: [{
           title: 'Current State',
@@ -28,13 +28,18 @@ async function sendAlarm(snsEvent, slackWebhookToken) {
           title: 'Reason',
           value: message.NewStateReason,
           short: false
+        },
+        {
+          title: 'Trigger',
+          value: ` - Metric name: ${message.Trigger.MetricName} \n - Period: ${message.Trigger.Period} \n - Evaluation periods: ${message.Trigger.EvaluationPeriods} \n - Comparison operator: ${message.Trigger.ComparisonOperator} \n - Threshold: ${message.Trigger.Threshold}`,
+          short: false
         }
       ],
       image_url: '',
       thumb_url: '',
-      footer: '',
-      footer_icon: '',
-      ts: ''
+      footer: 'CloudWatch Alarm',
+      footer_icon: 'https://raw.githubusercontent.com/machulav/cloudwatch-to-slack-sender/master/img/aws.ico',
+      ts: new Date(message.StateChangeTime).getTime()
     }]
   };
 
