@@ -59,5 +59,5 @@ function getColor(messageState) {
 }
 
 module.exports = {
-  sendMessageToSlack
+  sendAlarm
 }
